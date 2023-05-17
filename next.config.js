@@ -6,7 +6,7 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
     domains: ["nireeka.com", "www.gravatar.com", "images.unsplash.com", "api.nireeka.com", "ae01.alicdn.com"],
     remotePatterns: [
