@@ -10,7 +10,7 @@ const SelectOrInput = (props) => {
   const handleChange = (selectedOption) => {
     setSelectedStateOption(selectedOption.name);
     console.log(selectedStateOption);
-    //debugger;
+    debugger;
     props.formik.setFieldValue(props.name, selectedOption.name);
   };
 

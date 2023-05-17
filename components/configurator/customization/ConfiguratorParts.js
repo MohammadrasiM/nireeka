@@ -32,7 +32,7 @@ export default function ConfiguratorParts(props) {
   //     document.getElementById(steps[stepIndex + 1]).scrollIntoView({ behavior: "smooth" });
   // };
   console.log(props.steps);
-  //debugger;
+  debugger;
   let lastIndex = props.steps.length - 1;
   return (
     <div className={classNames("divide-y space-y-8", props.className)}>

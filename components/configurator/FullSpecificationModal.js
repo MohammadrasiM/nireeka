@@ -20,10 +20,10 @@ export default function FullSpecificationModal(props) {
           {Object.keys(selectedParts).map((categoryPartId) => {
             let categoryTitle = "";
             for (let i = 0; i < configuratorData.parts.length; i++) {
-              //debugger;
+              debugger;
               if (+configuratorData.parts[i].category_part_id === +categoryPartId) {
                 categoryTitle = configuratorData.parts[i].category.category;
-                //debugger;
+                debugger;
                 break;
               }
             }

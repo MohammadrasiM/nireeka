@@ -192,7 +192,7 @@ const dataAbout = {
 
 export default function About({ data }) {
   console.log("data", data);
-  //debugger;
+  debugger;
   return (
     <>
       <div className="mt-2 bg-white">

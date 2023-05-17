@@ -34,7 +34,7 @@ const CartQuickView = (props) => {
   console.log(totalCartQuantity);
   console.log("cart", cart);
 
-  // //debugger;
+  // debugger;
   let ordersNumber = 0;
   if (typeof window !== "undefined") {
     ordersNumber = JSON.parse(window.localStorage.getItem(`ordersNumber`));

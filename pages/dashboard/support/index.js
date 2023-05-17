@@ -65,7 +65,7 @@ const SupportPage = (props) => {
       setIsLoading(false);
       return;
     }
-    //debugger;
+    debugger;
 
     setTicketsList(userTicketsRes.data);
     setIsLoading(false);
@@ -76,22 +76,22 @@ const SupportPage = (props) => {
   }, []);
 
   useEffect(() => {
-    //debugger;
+    debugger;
     if (ticketsList?.tickets) {
       let rowData;
 
       if (activeTab === 1) {
         rowData = ticketsList?.tickets?.filter((item) => {
-          //debugger;
+          debugger;
           return item.status === "Open";
         });
       } else if (activeTab === 2) {
         rowData = ticketsList?.tickets?.filter((item) => item.status === "Closed");
       } else rowData = ticketsList?.tickets;
-      //debugger;
+      debugger;
       const rowsToRender = rowData;
       setTableRows(rowsToRender);
-      //debugger;
+      debugger;
     }
   }, [activeTab, ticketsList]);
 

@@ -26,7 +26,7 @@ export default function AddressForm(props) {
   const handleChange = ({ name }) => {
     setSelectedStateOption(name);
     console.log(selectedStateOption);
-    //debugger;
+    debugger;
   };
 
   const getAddressSuggestions = async (searchQuery, countryCode) => {

@@ -73,9 +73,9 @@ const CreditsPage = (props) => {
       let rowData;
 
       if (activeTab === 1) {
-        //debugger
+        debugger;
         rowData = credits?.credits?.filter((item) => {
-          //debugger;
+          debugger;
           return item.type === 1;
         });
       } else if (activeTab === 2) {

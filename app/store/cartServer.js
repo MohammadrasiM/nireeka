@@ -79,18 +79,18 @@ const cartServer = createSlice({
     },
     //counter
     getItemCountPending(state) {
-      //debugger;
+      debugger;
       state.countCartDataLoading = true;
       state.countCartDataError = null;
     },
     getItemCountSuccess(state, action) {
-      //debugger;
+      debugger;
       state.countCartDataLoading = true;
       state.countCartData = { count: action.payload.count };
       state.countCartDataError = null;
     },
     getItemCountFail(state, action) {
-      //debugger;
+      debugger;
       state.isAddToCartLoading = false;
       state.countCartData = { count: 0 };
       state.countCartDataError = action.payload;
