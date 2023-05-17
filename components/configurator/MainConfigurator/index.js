@@ -1069,7 +1069,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                   <a
                                     className={`${styles.quickview} ml-0.5 font-light  flex justify-center items-center cursor-pointer disabled:cursor-not-allowed border border-white hover:border-nireekaGreen bg-nireekaGreen hover:text-nireekaGreen hover:bg-transparent text-white w-full py-1 rounded-md px-1`}
                                   >
-                                    buy Now
+                                    Buy Now
                                   </a>
                                 </Link>
                               </div>

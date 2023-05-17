@@ -36,7 +36,7 @@ const Channel = (props) => {
     setIsFetchingLoading(true);
     const feedDataRes = await getPostsByChannel(router.query.channel_slug, router.query.page_num);
     if (feedDataRes instanceof Error) {
-      console.log('error')
+      console.log("error");
       setPosts([]);
       setIsFetchingLoading(false);
       return;
@@ -110,10 +110,7 @@ const Channel = (props) => {
 export const getStaticProps = async (context) => {
   const { params } = context;
 
-  const responses = await Promise.all([
-    getPostsByChannel(params.channel_slug, params.page_num),
-    getForumLayoutProps(),
-  ]);
+  const responses = await Promise.all([getPostsByChannel(params.channel_slug, params.page_num), getForumLayoutProps()]);
   const posts = responses[0];
   const layoutProps = responses[1];
 
@@ -137,8 +134,7 @@ export const getStaticPaths = async () => {
   const paths = [];
 
   const requestsToExecute = [];
-  for (let i = 0; i < channels.data.length; i++)
-    requestsToExecute.push(getPostsByChannel(channels.data[i].slug, 1));
+  for (let i = 0; i < channels.data.length; i++) requestsToExecute.push(getPostsByChannel(channels.data[i].slug, 1));
 
   const responses = await Promise.all(requestsToExecute);
 
@@ -150,7 +146,7 @@ export const getStaticPaths = async () => {
       for (let j = 1; j <= totalPageCount; j++) {
         paths.push({
           params: {
-            channel_slug: channels.data[i].slug,
+            channel_slug: channels?.data[i]?.slug,
             page_num: `${j}`,
           },
         });

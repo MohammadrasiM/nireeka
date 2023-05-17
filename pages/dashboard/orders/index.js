@@ -55,8 +55,8 @@ const OrdersPage = (props) => {
     }
   };
 
-  const getPageData = useCallback(() => getData(), [dispatch, page]);
-  console.log(orders, "orders");
+  const getPageData = useCallback(() => getData(), [dispatch, page, router]);
+
   return (
     <>
       <Head>

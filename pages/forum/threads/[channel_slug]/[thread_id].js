@@ -17,8 +17,8 @@ import ForumPostSkeleton from "@/components/Atoms/skeletonLoading/ForumPostSkele
 import Pagination from "@/components/Atoms/pagination/Pagination";
 
 const EditPost = dynamic(() => import("@/components/Forum/post/EditPost"), { ssr: false });
-const Comment = dynamic(() => import("@/components/Forum/comment/Comment"), {ssr: false});
-const AddComment = dynamic(() => import("@/components/Forum/comment/AddComment"), {ssr: false});
+const Comment = dynamic(() => import("@/components/Forum/comment/Comment"), { ssr: false });
+const AddComment = dynamic(() => import("@/components/Forum/comment/AddComment"), { ssr: false });
 
 const renderComments = (
   comments,
@@ -32,11 +32,7 @@ const renderComments = (
   const isReplyStack = visibleCommentIndexStart < 0 || visibleCommentIndexEnd < 0;
   return comments.map((item, index) => {
     // If the comment object (item) didn't have any reply
-    if (
-      !item.hasOwnProperty("replies") ||
-      item.replies === undefined ||
-      item.replies.length === 0
-    ) {
+    if (!item.hasOwnProperty("replies") || item.replies === undefined || item.replies.length === 0) {
       return (
         <Comment
           key={`commentid-${item.id}`}
@@ -68,9 +64,7 @@ const renderComments = (
           likeCount={item.like_count}
           isLiked={item.is_like}
           isCommentHidden={item.is_hidden}
-          isVisible={
-            !isReplyStack && index >= visibleCommentIndexStart && index < visibleCommentIndexEnd
-          }
+          isVisible={!isReplyStack && index >= visibleCommentIndexStart && index < visibleCommentIndexEnd}
           isReply={isReplyStack}
           refreshThreadData={refreshThreadData}
         >
@@ -107,7 +101,7 @@ const Thread = (props) => {
     const res = await getThreadData(router.query.channel_slug, router.query.thread_id);
 
     if (res instanceof Error) {
-      console.log('error')
+      console.log("error");
       setIsThreadLoading(false);
       return;
     }
@@ -205,11 +199,7 @@ const Thread = (props) => {
             {(isUserLoggedIn || threadData.comments.length !== 0) && (
               <>
                 {commentPagination.totalPages > 1 && (
-                  <Pagination
-                    pagination={commentPagination}
-                    onPageIndexClick={changeCommentPageHandler}
-                    noHref
-                  />
+                  <Pagination pagination={commentPagination} onPageIndexClick={changeCommentPageHandler} noHref />
                 )}
                 <WhiteShadowCard className={classNames(isThreadHidden && "bg-gray-200")}>
                   {isUserLoggedIn && <AddComment onSubmitUpdateUI={refreshThreadData} />}
@@ -228,19 +218,14 @@ const Thread = (props) => {
                   )}
                 </WhiteShadowCard>
                 {commentPagination.totalPages > 1 && (
-                  <Pagination
-                    pagination={commentPagination}
-                    onPageIndexClick={changeCommentPageHandler}
-                    noHref
-                  />
+                  <Pagination pagination={commentPagination} onPageIndexClick={changeCommentPageHandler} noHref />
                 )}
               </>
             )}
           </>
         ) : (
           <p>
-            Thread data is not available. This page is either deleted or you don&apos;t have the
-            permission to view it.
+            Thread data is not available. This page is either deleted or you don&apos;t have the permission to view it.
           </p>
         )}
       </ForumLayout>
@@ -251,10 +236,7 @@ const Thread = (props) => {
 export const getStaticProps = async (context) => {
   const { params } = context;
 
-  const responses = await Promise.all([
-    getThreadData(params.channel_slug, params.thread_id),
-    getForumLayoutProps(),
-  ]);
+  const responses = await Promise.all([getThreadData(params.channel_slug, params.thread_id), getForumLayoutProps()]);
 
   const post = responses[0];
   const layoutProps = responses[1];
@@ -272,7 +254,7 @@ export const getStaticPaths = async () => {
 
   const paths = [];
   for (let thread of page1.data.threads) {
-    paths.push({ params: { thread_id: thread.id.toString(), channel_slug: thread.channel.slug } });
+    paths.push({ params: { thread_id: thread?.id?.toString(), channel_slug: thread?.channel?.slug } });
   }
 
   return {

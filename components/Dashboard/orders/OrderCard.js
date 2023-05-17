@@ -66,7 +66,6 @@ const OrderCard = ({ order, setIsLoading, isLoading }) => {
   // }, [getOrderDetails]);
 
   useEffect(() => {
-    console.log(order, "orderorder");
     if (!order) return;
 
     let bikeTotalPriceToSet = order?.bike?.price;
