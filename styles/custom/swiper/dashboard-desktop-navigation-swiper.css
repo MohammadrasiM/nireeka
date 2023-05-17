@@ -1,0 +1,8 @@
+#dashboard-desktop-navigation-swiper.swiper {
+  margin: 0;
+}
+
+#dashboard-desktop-navigation-swiper.swiper .swiper-wrapper .swiper-slide {
+  width: auto;
+  height: auto;
+}

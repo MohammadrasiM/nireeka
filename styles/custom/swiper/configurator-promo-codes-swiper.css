@@ -1,0 +1,11 @@
+#configurator-promo-codes-swiper.swiper {
+  height: 100%;
+}
+
+#configurator-promo-codes-swiper.swiper .swiper-button-next,
+#configurator-promo-codes-swiper.swiper .swiper-button-next::after,
+#configurator-promo-codes-swiper.swiper .swiper-button-prev,
+#configurator-promo-codes-swiper.swiper .swiper-button-prev::after {
+  width: 30px;
+  height: 30px;
+}

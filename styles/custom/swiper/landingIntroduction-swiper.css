@@ -1,0 +1,42 @@
+#landingIntroduction-swiper .swiper-button-prev {
+  color: gray;
+  left: 5%;
+}
+#landingIntroduction-swiper .swiper-button-next {
+  color: gray;
+  right: 5%;
+}
+#landingIntroduction-swiper .swiper-pagination {
+  display: inline-block;
+}
+#landingIntroduction-swiper .swiper-pagination .swiper-pagination-bullet {
+  background: #fffffffa;
+  width: 40px;
+  border-radius: 1px;
+}
+#landingIntroduction-swiper-home .swiper-button-prev {
+  color: gray;
+  left: 2%;
+}
+#landingIntroduction-swiper-home .swiper-button-next {
+  color: gray;
+  right: 2%;
+}
+#landingIntroduction-swiper-home .swiper-pagination {
+  display: inline-block;
+}
+#landingIntroduction-swiper-home .swiper-pagination .swiper-pagination-bullet {
+  background: #fffffffa;
+  width: 35px;
+  border-radius: 1px;
+}
+@media screen and (max-width: 768px) {
+  #landingIntroduction-swiper-home .swiper-pagination .swiper-pagination-bullet {
+    display: none;
+  }
+}
+.bg-Vector {
+  background-image: url("https://api.nireeka.com/images/landing/background-circle-vector-nireeka-prime.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+}

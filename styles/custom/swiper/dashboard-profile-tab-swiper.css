@@ -1,0 +1,9 @@
+#dashboard-profile-tab-swiper.swiper {
+  margin: 0;
+}
+
+#dashboard-profile-tab-swiper.swiper .swiper-wrapper .swiper-slide {
+  width: auto;
+  height: auto;
+  margin-right: 1rem;
+}

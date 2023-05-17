@@ -1,0 +1,11 @@
+.parentVideo video {
+  object-fit: cover;
+  min-height: 600px;
+  height: 100vh;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .parentVideo video {
+    min-height: 622px;
+  }
+}

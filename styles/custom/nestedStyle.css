@@ -1,0 +1,11 @@
+
+.dangeriousStyleAccsessories > ul {
+    margin-top: 0.5rem;
+}
+
+.dangeriousStyleAccsessories > ul > li {
+    list-style: disc;
+    padding-top: 0.5rem;
+    margin: auto 17px;
+    text-align: -webkit-match-parent;
+}

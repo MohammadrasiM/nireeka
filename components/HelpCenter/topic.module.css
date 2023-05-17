@@ -1,0 +1,11 @@
+.tagLinks a {
+    color: #7366f1;
+}
+
+.tagLinksRelated a {
+    color: #000000;
+}
+
+.tagText>p {
+    font-family: "Exo" !important;
+}

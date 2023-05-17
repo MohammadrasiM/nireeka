@@ -1,0 +1,15 @@
+#full-specification-parts-swiper.swiper {
+  height: 100%;
+}
+
+#full-specification-parts-swiper.swiper .swiper-wrapper {
+  /* justify-content: stretch; */
+}
+
+#full-specification-parts-swiper.swiper .swiper-button-next,
+#full-specification-parts-swiper.swiper .swiper-button-next::after,
+#full-specification-parts-swiper.swiper .swiper-button-prev,
+#full-specification-parts-swiper.swiper .swiper-button-prev::after {
+  width: 30px;
+  height: 30px;
+}

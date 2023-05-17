@@ -1,0 +1,165 @@
+.font-exo {
+  font-family: "Exo" !important;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Black.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Black-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Black-Italic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Bold.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Bold-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Bold-Italic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-DemiBold.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-DemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-DemiBold-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-DemiBold-Italic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-ExtraBold.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-ExtraBold-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-ExtraBold-Italic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-ExtraLight.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-ExtraLight-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-ExtraLight-Italic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Light-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Light-Italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Light.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Medium.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Medium-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Medium-Italic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Regular.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Regular-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Regular-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Thin.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../../public/fonts/Exo/Exo-Thin-Italic.woff2") format("woff2"),
+    url("../../public/fonts/Exo/Exo-Thin-Italic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}

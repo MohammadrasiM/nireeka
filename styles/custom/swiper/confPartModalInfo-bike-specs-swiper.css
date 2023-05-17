@@ -1,0 +1,11 @@
+#confPartModalInfo-bike-specs-swiper.swiper {
+  height: 100%;
+}
+
+#confPartModalInfo-bike-specs-swiper.swiper .swiper-button-next,
+#confPartModalInfo-bike-specs-swiper.swiper .swiper-button-next::after,
+#confPartModalInfo-bike-specs-swiper.swiper .swiper-button-prev,
+#confPartModalInfo-bike-specs-swiper.swiper .swiper-button-prev::after {
+  width: 30px;
+  height: 30px;
+}

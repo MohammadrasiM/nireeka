@@ -1,0 +1,123 @@
+.row {
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cart {
+  width: 500px;
+  height: auto;
+  margin: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+  position: relative;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  &:hover {
+    .box {
+      box-shadow: 0px 1px 0px rgb(255 46 46 / 88%);
+    }
+  }
+}
+
+.box {
+  box-shadow: 0px 0px 0px rgb(244 240 240 / 65%);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  margin-bottom: 14px;
+  padding: 10px 0px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+  .cart {
+    width: 100%;
+    margin: 25px 2px;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+  .cart {
+    width: 100%;
+    margin: 25px 2px;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 920px) {
+  .cart {
+    width: 75%;
+    margin: 25px;
+  }
+}
+@media only screen and (min-width: 920px) and (max-width: 1200px) {
+  .cart {
+    width: 400px;
+    margin: 25px;
+  }
+}
+
+.revenantBox {
+  width: 100%;
+  min-width: 300px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+  position: relative; 
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  &:hover {
+    .box {
+      box-shadow: 0px 1px 0px rgb(255 46 46 / 88%);
+    }
+  }
+}
+
+
+// @media only screen and (min-width: 200px) and (max-width: 500px) {
+//   .revenantBox {
+//     width: 100%;
+//     margin: 25px 2px;
+//   }
+// }
+// @media only screen and (min-width: 500px) and (max-width: 700px) {
+//   .revenantBox {
+//     width: 100%;
+//     margin: 25px 2px;
+//   }
+// }
+// @media only screen and (min-width: 700px) and (max-width: 920px) {
+//   .revenantBox {
+//     width: 75%;
+//     margin: 25px;
+//   }
+// }
+// @media only screen and (min-width: 920px) and (max-width: 1200px) {
+//   .revenantBox {
+//     width: 400px;
+//     margin: 25px;
+//   }
+// }

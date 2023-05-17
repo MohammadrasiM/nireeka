@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nireeka.com/
+
+# Sitemaps
+Sitemap: https://nireeka.com/sitemap.xml

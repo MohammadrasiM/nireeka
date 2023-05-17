@@ -1,0 +1,47 @@
+.cardZoom {
+  @apply items-start relative justify-start overflow-hidden;
+}
+
+.cardZoomImage {
+  @apply transition-all  duration-700 ease-in-out transform bg-center bg-cover;
+}
+
+.cardZoomText {
+  @apply px-10 py-10 text-xl transition-all duration-700 ease-in-out transform scale-110 text-gray-500;
+}
+
+.inverted {
+  background: linear-gradient(-90deg, #000 40%, rgba(255, 255, 255, 0) 0 60%, #000 0) right/300% 100% no-repeat, linear-gradient(-90deg, rgba(0, 0, 0, 0) 40%, #ff4850 0 60%, rgba(0, 0, 0, 0) 0) right/400% 100% no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.8s;
+  color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-family: Hind;
+  font-weight: 200;
+  letter-spacing: -0.25px;
+  transition-property: all;
+  transition-duration: 900ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardZoom:hover .cardZoomImage {
+  transition-property: all;
+  transition-duration: 1500ms;
+  transform: scale(1.1);
+}
+.cardZoom:hover .cardZoomText {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-family: Hind;
+}
+.cardZoom:hover .cardZoomText p {
+  color: #ff4850;
+}
+.cardZoom:hover .cardZoomText .inverted {
+  transition-property: all;
+  transition-duration: 900ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-position: left;
+}/*# sourceMappingURL=styles.module.css.map */

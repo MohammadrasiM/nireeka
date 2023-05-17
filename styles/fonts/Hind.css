@@ -1,0 +1,19 @@
+.font-hind {
+  font-family: "Hind" !important;
+}
+
+
+@font-face {
+  font-family: "Hind";
+  src: url("../../public/fonts/Hind/Hind-Medium.ttf") format("woff2"),
+    url("../../public/fonts/Hind/Hind-Medium.ttf") format("woff");
+  font-weight: 300;
+  /* font-style: normal; */
+}
+@font-face {
+  font-family: "Hind";
+  src: url("../../public/fonts/Hind/Hind-Light.ttf") format("woff2"),
+    url("../../public/fonts/Hind/Hind-Light.ttf") format("woff");
+  font-weight: 200;
+  /* font-style: normal; */
+}

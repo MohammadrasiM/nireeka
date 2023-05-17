@@ -1,0 +1,9 @@
+#forum-post-gallery-thumbnails.swiper .swiper-wrapper {
+  height: 7rem;
+}
+
+#forum-post-gallery-thumbnails.swiper .swiper-wrapper .swiper-slide {
+    width: auto;
+    height: auto;
+    position: static;
+}

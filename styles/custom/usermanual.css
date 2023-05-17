@@ -1,0 +1,27 @@
+.accessoryManual {
+  position: relative;
+  overflow: hidden;
+  height: 12rem;
+  width: 165px;
+  max-width: 20rem;
+}
+@media (max-width: 640px) {
+  .accessoryManual {
+    height: 16rem;
+    width: 245px;
+    max-width: 20rem;
+  }
+}
+.accessoryManualDown {
+  position: relative;
+  overflow: hidden;
+  height: 10rem;
+  width: 100%;
+  max-width: 12rem;
+}
+@media (max-width: 640px) {
+  .accessoryManualDown {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
