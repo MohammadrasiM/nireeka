@@ -777,11 +777,16 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
               className="object-cover  -z-10 aspect-[1/0.5] object-center"
               // style={{ zIndex: -10 }}
             /> */}
-          <div className=" absolute left-0  md:top-[36%] lg:top-[32%] ">
+          {/* <div className=" absolute left-0  md:top-[36%] lg:top-[32%] "> */}
+          <div className=" absolute left-0  top-[20rem] right-0 3xl:left-[30%] md:top-[16rem] lg:top-[16rem] ">
             <div className="relative">
               {" "}
-              <img src={"/images/configurator/e-bike-brake.png"} alt={"banner"} className="object-contain    " />{" "}
-              <p className="absolute left-[10%] bottom-4  text-white font-bold italic bebas md:text-5xl">E-BIKES</p>
+              <img
+                src={"/images/configurator/e-bike-brake.png"}
+                alt={"banner"}
+                className="object-contain  w-full max-h-[478px]  "
+              />{" "}
+              <p className="absolute left-[12%] bottom-4  text-white font-bold italic bebas md:text-5xl">E-BIKES</p>
             </div>
           </div>
         </div>
