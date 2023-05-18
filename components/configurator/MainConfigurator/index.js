@@ -764,6 +764,27 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
             </Link>
           </div>
         </div>
+
+        <div className="w-full  -z-10 aspect-[2.9/1] md:aspect-[2.9/1] lg:aspect-[2.8/1] ">
+          {" "}
+          {/* <Image
+              src={"/images/configurator/e-bike-brake.png"}
+              alt={"banner"}
+              // width="100%"
+              // height="50%"
+              layout="fill"
+              objectFit="contain"
+              className="object-cover  -z-10 aspect-[1/0.5] object-center"
+              // style={{ zIndex: -10 }}
+            /> */}
+          <div className=" absolute left-0  md:top-[36%] lg:top-[32%] ">
+            <div className="relative">
+              {" "}
+              <img src={"/images/configurator/e-bike-brake.png"} alt={"banner"} className="object-contain    " />{" "}
+              <p className="absolute left-[10%] bottom-4  text-white font-bold italic bebas md:text-5xl">E-BIKES</p>
+            </div>
+          </div>
+        </div>
         <div className="pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
           <aside>
             <h2 className="sr-only">Filters</h2>

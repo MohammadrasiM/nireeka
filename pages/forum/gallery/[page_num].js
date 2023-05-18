@@ -59,8 +59,8 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      galleryPics: pics.data.list,
-      pagination: pics.data.pagination,
+      galleryPics: pics?.data?.list,
+      pagination: pics?.data?.pagination,
       ...layoutProps,
     },
     revalidate: 60,

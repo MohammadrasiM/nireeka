@@ -31,7 +31,7 @@ const OrdersPagination = (props) => {
     props.pagination.currentPage !== pageIndexes[pageIndexes.length - 1] ? currentIndexInArray + 1 : null;
 
   return (
-    <nav className="flex items-center justify-between px-4 border-t border-gray-200 sm:px-0">
+    <nav className="flex w-full items-center justify-between px-4 border-t border-gray-200 sm:px-0">
       <div className="flex flex-1 w-0 -mt-px">
         {!!(prevPageIndexInArray !== null) && (
           <Link shallow href={props.noHref ? "" : props.links[prevPageIndexInArray]} passHref>

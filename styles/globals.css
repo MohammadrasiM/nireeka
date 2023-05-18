@@ -34,6 +34,7 @@ Fonts
 @import url("fonts/Exo.css");
 @import url("fonts/Hind.css");
 @import url("fonts/fontello.css");
+@import url("fonts/Bebas.css");
 
 /* Applies a 14px font size to the root to decrease font size globally */
 /* :root {
@@ -524,4 +525,20 @@ input[type="number"].number-input-no-arrows {
 .disable-preflight h6 {
   font-size: revert;
   font-weight: revert;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: rgba(86, 86, 86, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  border: 2px solid rgba(86, 86, 86, 1);
+  background: transparent;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1c;
+  border-radius: 100px;
+  border: 1px solid #565656;
 }

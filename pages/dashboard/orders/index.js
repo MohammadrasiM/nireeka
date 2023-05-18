@@ -28,7 +28,7 @@ const OrdersPage = (props) => {
   const [pagination, setPagination] = useState();
 
   const [paginationLinks, setPaginationLinks] = useState();
-
+  const [wholePageData, setWholePageData] = useState({});
   const getData = async () => {
     if (router?.isReady) {
       setIsLoading(true);
@@ -39,6 +39,7 @@ const OrdersPage = (props) => {
           setOrders(data.order_bikes);
           const pageCount = Math.ceil(data?.pagination?.total / data?.pagination?.page_size);
           const pageMade = paginate(data?.pagination?.current, pageCount);
+          setWholePageData(data?.pagination);
           setPagination(pageMade);
           setPaginationLinks(
             pageMade.indexes.map((pageIndex) => {
@@ -80,7 +81,20 @@ const OrdersPage = (props) => {
                 <p className="text-sm">No item to display</p>
               </WhiteShadowCard>
             )}
-            {pagination?.indexes && paginationLinks && <Pagination pagination={pagination} links={paginationLinks} />}
+            {pagination?.indexes && paginationLinks && paginationLinks?.length > 0 && (
+              <div className="flex flex-col items-center gap-2 w-full">
+                <div>
+                  <p className="opacity-70 text-xs">
+                    Showing {wholePageData?.current * wholePageData?.page_size - (wholePageData?.page_size - 1)} to{" "}
+                    {wholePageData?.current * wholePageData?.page_size > wholePageData?.total
+                      ? wholePageData?.total
+                      : wholePageData?.current * wholePageData?.page_size}{" "}
+                    of {wholePageData?.total}
+                  </p>{" "}
+                </div>
+                <Pagination pagination={pagination} links={paginationLinks} />
+              </div>
+            )}
           </div>
         </div>
       </OrdersWrapper>

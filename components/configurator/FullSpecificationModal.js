@@ -31,7 +31,7 @@ export default function FullSpecificationModal(props) {
             return (
               <Fragment key={`${categoryPartId}-${selectedParts[categoryPartId].title}`}>
                 <div
-                  className="border-b py-2 last:border-b-0 hover:bg-gray-100 cursor-pointer"
+                  className="border-b py-2  hover:bg-gray-100 cursor-pointer"
                   onClick={() => setVisibleInfoModalProductId(selectedParts[categoryPartId].id)}
                 >
                   <p className="flex">
@@ -60,11 +60,11 @@ export default function FullSpecificationModal(props) {
         {/* configuratorData.product.specs.map */}
         {configuratorData.product.specs.map((item) => (
           // item .key
-          <div key={item.title} className="border-b border-t border-gray-400 py-2 last:border-b-0">
+          <div key={item.title} className="border-b  py-2 last:border-b-0">
             <p className="flex">
               <span className="capitalize flex-1 text-sm">{item.title}</span>
 
-              <span className="text-gray-700 flex-1 text-sm">{`${item.value} ${item.title_upper}`}</span>
+              <span className="text-gray-700 flex-1 text-sm">{`${item.value} `}</span>
               <span className="text-gray-700 flex-1 text-sm"></span>
             </p>
           </div>
