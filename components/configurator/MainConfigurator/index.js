@@ -784,7 +784,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
               <img
                 src={"/images/configurator/e-bike-brake.png"}
                 alt={"banner"}
-                className="object-contain  w-full max-h-[478px]  "
+                className="object-cover  w-full max-h-[478px]  "
               />{" "}
               <p className="absolute left-[12%] bottom-4  text-white font-bold italic bebas md:text-5xl">E-BIKES</p>
             </div>

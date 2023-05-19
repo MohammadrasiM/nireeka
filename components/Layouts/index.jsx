@@ -35,10 +35,9 @@ function Layouts({ children }) {
     }
   }, [isUserLoggedIn, userData]);
 
-
   return (
     <>
-      <MainHeader  />
+      <MainHeader />
       {children}
       <Footer />
     </>
