@@ -14,7 +14,7 @@ const TrendingPage = (props) => {
   const fetchAllTrendingPosts = useCallback(async () => {
     const allTrendingRes = await getAllTrendingPosts();
     if (allTrendingRes instanceof Error) {
-      console.log('error')
+      console.log("error");
       return;
     }
     setPosts(allTrendingRes.data.populars);
@@ -37,39 +37,52 @@ const TrendingPage = (props) => {
         leftColumn={<SecondaryNav channels={props.channels} />}
         rightColumn={<TertiaryColumn trending={props.trending} leaderboard={props.leaderboard} />}
       >
-        {posts.map((item, index) => (
-          <Post
-            key={`post-${Math.random()}-${index}`}
-            user={item.user}
-            channel={item.channel}
-            postTitle={item.title}
-            postBody={item.body}
-            postFiles={item.files}
-            imagePath={item.image_path}
-            lastUpdateDate={item.updated_at}
-            postSlug={item.slug}
-            threadId={item.id}
-            viewCount={item.visit_count}
-            likeCount={item.like_count}
-            commentCount={item.comment_count}
-            isLiked={item.is_like}
-            isThreadHidden={item.is_hidden}
-            isSubscribed={item.is_subscribe}
-          />
-        ))}
+        {posts && posts?.length > 0 ? (
+          posts?.map((item, index) => (
+            <Post
+              key={`post-${Math.random()}-${index}`}
+              user={item.user}
+              channel={item.channel}
+              postTitle={item.title}
+              postBody={item.body}
+              postFiles={item.files}
+              imagePath={item.image_path}
+              lastUpdateDate={item.updated_at}
+              postSlug={item.slug}
+              threadId={item.id}
+              viewCount={item.visit_count}
+              likeCount={item.like_count}
+              commentCount={item.comment_count}
+              isLiked={item.is_like}
+              isThreadHidden={item.is_hidden}
+              isSubscribed={item.is_subscribe}
+            />
+          ))
+        ) : (
+          <></>
+        )}
       </ForumLayout>
     </>
   );
 };
 
 export const getStaticProps = async () => {
-  const responses = await Promise.all([getForumLayoutProps(), getAllTrendingPosts()]);
-  const layoutProps = responses[0];
-  const allTrendingPosts = responses[1];
+  let responses;
+  let allTrendingPosts;
+  let layoutProps;
+  try {
+    responses = await Promise.all([getForumLayoutProps(), getAllTrendingPosts()]);
+    // console.log(responses, "responses");
+    layoutProps = responses[0] ? responses[0] : {};
+    allTrendingPosts = responses[1] ? responses[1] : [];
+  } catch (error) {
+    allTrendingPosts = [];
+    layoutProps = {};
+  }
 
   return {
     props: {
-      posts: allTrendingPosts.data.populars,
+      posts: allTrendingPosts && allTrendingPosts?.data ? allTrendingPosts : null,
       ...layoutProps,
     },
     revalidate: 60,

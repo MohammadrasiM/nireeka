@@ -61,10 +61,7 @@ const Leaderboard = (props) => {
               <div>
                 <Menu.Button className="inline-flex justify-center w-full px-4 py-2 bg-white text-sm font-light text-gray-700 hover:bg-gray-50">
                   Sorted By {sortBy ? sortBy.text : defaultSortText}
-                  <ChevronDownIcon
-                    className="-mr-1 ml-2 h-5 w-5 icon-stroke-width-1"
-                    aria-hidden="true"
-                  />
+                  <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 icon-stroke-width-1" aria-hidden="true" />
                 </Menu.Button>
               </div>
               <Transition
@@ -118,14 +115,15 @@ const Leaderboard = (props) => {
               }
 
               return (
-                <LeaderboardItem
-                  key={index}
-                  user={item.user}
-                  points={sortKey === "forum" ? item.points : item.value}
-                  text={text}
-                  rank={index + 1}
-                  noNumber={props.noNumber}
-                />
+                // <LeaderboardItem
+                //   key={index}
+                //   user={item.user}
+                //   points={sortKey === "forum" ? item.points : item.value}
+                //   text={text}
+                //   rank={index + 1}
+                //   noNumber={props.noNumber}
+                // />
+                <></>
               );
             })
           ) : (

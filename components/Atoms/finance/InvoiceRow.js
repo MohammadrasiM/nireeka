@@ -2,7 +2,7 @@ import { commafy } from "functions/numbers";
 
 const InvoiceRow = ({ item, type, bikeUpgrades }) => {
   console.log("item", item);
-  debugger;
+  //debugger;
 
   return (
     <>

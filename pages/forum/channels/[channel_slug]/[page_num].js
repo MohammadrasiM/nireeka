@@ -108,12 +108,19 @@ const Channel = (props) => {
 };
 
 export const getStaticProps = async (context) => {
-  const { params } = context;
+  let responses;
+  let posts;
+  let layoutProps;
+  try {
+    const { params } = context;
 
-  const responses = await Promise.all([getPostsByChannel(params.channel_slug, params.page_num), getForumLayoutProps()]);
-  const posts = responses[0];
-  const layoutProps = responses[1];
-
+    responses = await Promise.all([getPostsByChannel(params.channel_slug, params.page_num), getForumLayoutProps()]);
+    posts = responses[0];
+    layoutProps = responses[1];
+  } catch (error) {
+    posts = null;
+    layoutProps = null;
+  }
   return {
     props: {
       posts: posts?.data?.threads || null,

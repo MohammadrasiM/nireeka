@@ -152,7 +152,7 @@ const ConfiguratorFeatureTab = () => {
             <div className="-my-12 divide-y divide-gray-200">
               {(!open ? take(configuratorData?.reviews?.items, 3) : configuratorData?.reviews?.items)?.map((review) => {
                 console.log("review", review);
-                debugger;
+                //debugger;
 
                 return (
                   <div key={review.id} className="py-12 px-6 md:px-0">

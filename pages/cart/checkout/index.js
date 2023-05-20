@@ -73,7 +73,7 @@ export default function CheckoutPage() {
   const [stateCountrySelect, setStateCountrySelect] = useState(null);
 
   console.log(stateCountrySelect);
-  debugger;
+  //debugger;
 
   const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
   const isUserDataLoading = useSelector((state) => state.auth.isUserDataLoading);

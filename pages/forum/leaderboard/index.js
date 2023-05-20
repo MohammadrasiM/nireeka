@@ -24,7 +24,7 @@ const LeaderboardPage = (props) => {
           <LeaderboardItem key={index} user={item.user} points={item.points} rank={index + 1} />
         ))}
       </WhiteShadowCard> */}
-        <Leaderboard NSDCount={50} forumCount="more" leaderboard={props.leaderboard} noViewAll />
+        {/* <Leaderboard NSDCount={50} forumCount="more" leaderboard={props.leaderboard} noViewAll /> */}
       </ForumLayout>
     </>
   );

@@ -62,9 +62,7 @@ const DashboardLayout = (props) => {
       {
         name: "Orders",
         href: "/dashboard/orders",
-        count: userData?.orders_count
-          ? sum(values(userData?.orders_count))
-          : null,
+        count: userData?.orders_count ? sum(values(userData?.orders_count)) : null,
         current: router.pathname.includes("/dashboard/orders"),
       },
       {
@@ -101,10 +99,7 @@ const DashboardLayout = (props) => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Disclosure
-        as="nav"
-        className="pb-24 bg-gradient-to-r from-gray-200 to-gray-300"
-      >
+      <Disclosure as="nav" className="pb-24 bg-gradient-to-r from-gray-200 to-gray-300">
         {({ open }) => (
           <>
             <div className="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
@@ -186,15 +181,9 @@ const DashboardLayout = (props) => {
                   <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-700 bg-transparent rounded-md hover:text-white hover:bg-white hover:bg-opacity-10 focus:outline-none">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XIcon
-                        className="block w-6 h-6 icon-stroke-width-1"
-                        aria-hidden="true"
-                      />
+                      <XIcon className="block w-6 h-6 icon-stroke-width-1" aria-hidden="true" />
                     ) : (
-                      <MenuIcon
-                        className="block w-6 h-6 icon-stroke-width-1"
-                        aria-hidden="true"
-                      />
+                      <MenuIcon className="block w-6 h-6 icon-stroke-width-1" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
                 </div>
@@ -255,17 +244,10 @@ const DashboardLayout = (props) => {
                           </div>
                         </div>
                         <div className="px-2 mt-3 space-y-1">
-                          <Link
-                            key="back-to-nireeka-shop"
-                            href="/configurator"
-                            passHref
-                          >
+                          <Link key="back-to-nireeka-shop" href="/configurator" passHref>
                             <a className="block px-3 py-2 text-base font-light text-gray-900 transition-all rounded-md font-exo hover:bg-gray-100 hover:text-gray-800">
                               <span className="flex items-center">
-                                <ChevronLeftIcon
-                                  className="w-5 h-5 icon-stroke-width-1"
-                                  viewBox="5 0 24 24"
-                                />
+                                <ChevronLeftIcon className="w-5 h-5 icon-stroke-width-1" viewBox="5 0 24 24" />
                                 <span>Back to Nireeka Shop</span>
                               </span>
                             </a>
@@ -273,8 +255,7 @@ const DashboardLayout = (props) => {
                           {navigation.map((item) => (
                             <Link key={item.name} href={item.href} passHref>
                               <a className="block px-3 py-2 text-base font-light text-gray-900 transition-all rounded-md font-exo hover:bg-gray-100 hover:text-gray-800">
-                                {item.name}{" "}
-                                {item?.count ? `(${item?.count})` : undefined}
+                                {item.name} {item?.count ? `(${item?.count})` : undefined}
                               </a>
                             </Link>
                           ))}
@@ -297,10 +278,7 @@ const DashboardLayout = (props) => {
           <div className="grid items-start grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
             {/* Left column */}
             <div className="grid grid-cols-1 gap-4 lg:col-span-2">
-              {isUserLoggedIn &&
-              userData &&
-              !isAuthLoading &&
-              !isPageDataLoading ? (
+              {isUserLoggedIn && userData && !isAuthLoading && !isPageDataLoading ? (
                 props.children
               ) : props.loading ? (
                 <props.loading />
@@ -314,7 +292,7 @@ const DashboardLayout = (props) => {
             {/* Right column */}
             <div className="grid grid-cols-1 gap-4">
               <Trending posts={props.trending} />
-              <Leaderboard leaderboard={props.leaderboard} noNumber />
+              {/* <Leaderboard leaderboard={props.leaderboard} noNumber /> */}
             </div>
           </div>
         </div>

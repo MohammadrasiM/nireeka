@@ -21,7 +21,7 @@ export default function ProfileLayout(props) {
                 <DashboardSearchBar />
               </div>
               <Trending posts={props.trending} />
-              <Leaderboard leaderboard={props.leaderboard} noNumber />
+              {/* <Leaderboard leaderboard={props.leaderboard} noNumber /> */}
             </div>
           </div>
         </div>

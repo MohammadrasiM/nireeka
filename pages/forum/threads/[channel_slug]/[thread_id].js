@@ -235,28 +235,48 @@ const Thread = (props) => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
+  let responses;
+  let post;
+  let layoutProps;
+  try {
+    responses = await Promise.all([getThreadData(params.channel_slug, params.thread_id), getForumLayoutProps()]);
 
-  const responses = await Promise.all([getThreadData(params.channel_slug, params.thread_id), getForumLayoutProps()]);
-
-  const post = responses[0];
-  const layoutProps = responses[1];
-
+    post = responses[0];
+    layoutProps = responses[1];
+  } catch (error) {
+    post = null;
+    layoutProps = null;
+  }
+  let propData = {};
+  if (layoutProps) {
+    propData = {
+      threadData: post?.data || null,
+      ...(layoutProps || null),
+    };
+  } else {
+    propData = {
+      threadData: post?.data || null,
+    };
+  }
   return {
-    props: {
-      threadData: post.data || null,
-      ...layoutProps,
-    },
+    props: propData,
   };
 };
 
 export const getStaticPaths = async () => {
-  const page1 = await getFeedPostsByPage(1);
+  let page1;
+  let paths;
 
-  const paths = [];
-  for (let thread of page1.data.threads) {
-    paths.push({ params: { thread_id: thread?.id?.toString(), channel_slug: thread?.channel?.slug } });
+  try {
+    page1 = await getFeedPostsByPage(1);
+
+    paths = [];
+    for (let thread of page1.data.threads) {
+      paths.push({ params: { thread_id: thread?.id?.toString(), channel_slug: thread?.channel?.slug } });
+    }
+  } catch (error) {
+    paths = [];
   }
-
   return {
     paths,
     fallback: "blocking",

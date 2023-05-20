@@ -30,7 +30,7 @@ const SalesFeatures = dynamic(() => import("@/components/Home/SalesFeatures"));
 const SliderHero = dynamic(() => import("@/components/Home/SliderHero"));
 const CardGrid = dynamic(() => import("@/components/Home/cardGrid/CardGrid"));
 
-function HomePage({ homePageData,getDataSlider, configurator }) {
+function HomePage({ homePageData, getDataSlider, configurator }) {
   const dispatch = useDispatch();
   const [darkHeader, setDarkHeader] = useState(false);
 
@@ -61,13 +61,17 @@ function HomePage({ homePageData,getDataSlider, configurator }) {
               // onClick={() => router.push(`https://www.niree.ca/`)}
             >
               <div className="w-full ">
-                <SliderHero
-                  getDataSlider={getDataSlider}
-                  handleTheme={handleTheme}
-                  darkHeader={darkHeader}
-                  setDarkHeader={setDarkHeader}
-                  data={configurator}
-                />
+                {getDataSlider?.data && configurator ? (
+                  <SliderHero
+                    getDataSlider={getDataSlider}
+                    handleTheme={handleTheme}
+                    darkHeader={darkHeader}
+                    setDarkHeader={setDarkHeader}
+                    data={configurator}
+                  />
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
             {/* <div className="flex-col justify-start w-1/2 mx-auto text-center md:flex-col md:flex text-gray-50">
@@ -158,12 +162,22 @@ function HomePage({ homePageData,getDataSlider, configurator }) {
 export default HomePage;
 
 export const getStaticProps = async () => {
-  const homePageData = await getHomePageData();
-  const getDataSlider = await getHomePageDataSlider();
-  const res = await getConfiguratorBikes();
+  let homePageData;
+  let getDataSlider;
+  let res;
+
+  try {
+    homePageData = await getHomePageData();
+    getDataSlider = await getHomePageDataSlider();
+    res = await getConfiguratorBikes();
+  } catch {
+    homePageData = null;
+    getDataSlider = null;
+    res = null;
+  }
 
   return {
-    props: { homePageData, getDataSlider, configurator: res.data },
+    props: { homePageData, getDataSlider, configurator: res?.data || null },
 
     revalidate: 60,
   };

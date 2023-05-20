@@ -1,9 +1,6 @@
 import { getAllLeaderboardData, getLeaderboardData, getNSDLeaderboard } from "app/api/leaderboard";
 
-export const getAllLeaderboard = async (
-  NSDLeaderboardCount = 6,
-  forumLeaderboardCount = "less"
-) => {
+export const getAllLeaderboard = async (NSDLeaderboardCount = 6, forumLeaderboardCount = "less") => {
   let res;
   // Fetching leaderboard
   const allLeaderboard = {};
@@ -23,10 +20,10 @@ export const getAllLeaderboard = async (
 
   if (!responses) return null;
 
-  allLeaderboard.forum = responses[0].data;
-  allLeaderboard.odo = responses[1].data;
-  allLeaderboard.time = responses[2].data;
-  allLeaderboard.speed = responses[3].data;
+  allLeaderboard.forum = responses[0]?.data || null;
+  allLeaderboard.odo = responses[1]?.data || null;
+  allLeaderboard.time = responses[2]?.data || null;
+  allLeaderboard.speed = responses[3]?.data || null;
 
   return allLeaderboard;
 };

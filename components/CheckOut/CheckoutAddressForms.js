@@ -66,7 +66,7 @@ export default function CheckoutAddressForms(props) {
   useEffect(() => {
     if (selectIdCountry) {
       console.log("selectIdCountry", selectIdCountry);
-      debugger;
+      //debugger;
     }
   }, [selectIdCountry]);
 

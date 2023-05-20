@@ -5,10 +5,8 @@ const TertiaryColumn = (props) => {
   return (
     <div className="space-y-4">
       {/* <WhoToFollow /> */}
-      <Trending
-        posts={props.trending}
-      />
-      <Leaderboard leaderboard={props.leaderboard} noNumber />
+      <Trending posts={props.trending} />
+      {/* <Leaderboard leaderboard={props.leaderboard} noNumber /> */}
     </div>
   );
 };

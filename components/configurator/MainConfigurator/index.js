@@ -211,7 +211,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
   //   if (idBikeModal && isBuyNow) {
   //     const resultModal = await getBikeConfiguratorData(idBikeModal);
   //     setArrayDataModal(resultModal);
-  //     debugger;
+  //     //debugger;
   //   }
   // }, [idBikeModal, isBuyNow]);
 
@@ -563,7 +563,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
   //     product_id: resultModal?.data?.product?.id,
   //     count: 1,
   //   };
-  //   debugger;
+  //   //debugger;
   //   if (!isUserLoggedIn) {
   //     if (
   //       clickedButtonID === ADD_TO_CART_BUTTON ||
@@ -1367,7 +1367,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                               <div className="w-full flex px-1 flex-wrap bg-white justify-start md:justify-start space-x-4 md:space-x-20 pt-4 md:pt-3">
                                 {Object.entries(arrayDataModal?.data?.init_value).map(([type, init_value]) => {
                                   console.log("type", type);
-                                  debugger;
+                                  //debugger;
 
                                   return (
                                     <div key={type} className="flex flex-col">

@@ -20,7 +20,7 @@ const Post = dynamic(() => import("@/components/Forum/post/Post"), { loading: Fo
 const Forum = (props) => {
   const router = useRouter();
   const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
-  
+
   const [isFetchingLoading, setIsFetchingLoading] = useState(false);
   // State to show newly fetched feed data
   const [posts, setPosts] = useState(props.posts);
@@ -44,7 +44,7 @@ const Forum = (props) => {
 
   // Pagination Logic
   const pageCount = Math.ceil(props?.pagination?.total / props?.pagination?.page_size);
-  const pagination = paginate(props.pagination.current, pageCount);
+  const pagination = paginate(props?.pagination?.current, pageCount);
   const paginationLinks = pagination.indexes.map((pageIndex) => {
     if (pageIndex === -1) return "#";
     return { pathname: `/forum/${pageIndex}` };
@@ -72,7 +72,7 @@ const Forum = (props) => {
 
         {/* Rendering posts in feed */}
         {!isFetchingLoading ? (
-          posts.map((item, index) => (
+          posts?.map((item, index) => (
             <Post
               key={`post-${Math.random()}-${index}`}
               user={item.user}
@@ -113,10 +113,20 @@ const Forum = (props) => {
 };
 
 export const getStaticProps = async (context) => {
-  const { page_num } = context.params;
-  const responses = await Promise.all([getFeedPostsByPage(page_num), getForumLayoutProps()]);
-  const posts = responses[0];
-  const layoutProps = responses[1];
+  let responses;
+  let posts;
+  let layoutProps;
+  try {
+    leaderboardData = await fetchLeaderboardData();
+    const { page_num } = context.params;
+    responses = await Promise.all([getFeedPostsByPage(page_num), getForumLayoutProps()]);
+    posts = responses[0];
+    layoutProps = responses[1];
+    console.log(responses, "responsesresponses");
+  } catch (error) {
+    posts = null;
+    layoutProps = null;
+  }
 
   return {
     props: {
@@ -129,13 +139,19 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const posts = await getFeedPostsByPage(1);
+  let posts;
+  let pageCount;
+  let paths;
 
-  const pageCount = Math.ceil(posts.data.pagination.total / posts.data.pagination.page_size);
+  try {
+    posts = await getFeedPostsByPage(1);
 
-  const paths = [];
-  for (let i = 1; i <= pageCount; i++) paths.push({ params: { page_num: `${i}` } });
-
+    pageCount = Math.ceil(posts?.data?.pagination?.total / posts?.data?.pagination?.page_size);
+    paths = [];
+    for (let i = 1; i <= pageCount; i++) paths.push({ params: { page_num: `${i}` } });
+  } catch (error) {
+    paths = [];
+  }
   return {
     paths,
     fallback: false,

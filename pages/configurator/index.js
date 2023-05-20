@@ -24,10 +24,18 @@ function Configurator({ bikes, filters }) {
 
 export default Configurator;
 export const getStaticProps = async () => {
-  let allBikes = await getConfiguratorBikesFilters();
+  let allBikes;
+  try {
+    allBikes = await getConfiguratorBikesFilters();
+  } catch (error) {
+    allBikes = null;
+  }
 
   return {
-    props: { bikes: allBikes?.data?.bikes, filters: allBikes?.data?.filters },
+    props: {
+      bikes: allBikes?.status == 200 && allBikes?.data ? allBikes?.data?.bikes || null : null,
+      filters: allBikes?.status == 200 && allBikes?.data ? allBikes?.data?.filters || null : null,
+    },
     revalidate: 2000,
   };
 };
