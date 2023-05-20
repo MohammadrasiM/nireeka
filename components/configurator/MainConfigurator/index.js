@@ -269,7 +269,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
 
   const handleCheckoutClick = async (e) => {
     e.preventDefault();
-    const upgrades = selectedUpgrades.map((upgrade) => upgrade.id);
+    const upgrades = selectedUpgrades.map((upgrade) => upgrade?.id);
 
     const clickedButtonID = e.currentTarget.id;
 
@@ -291,7 +291,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
       ) {
         // Extracting upgrade objects to save into local storage, so we can show its data in cart modal
         let equipmentPrice = 0;
-        let bikeFakeId = "" + arrayDataModal?.data?.variation.id;
+        let bikeFakeId = "" + arrayDataModal?.data?.variation?.id;
         for (let category of arrayDataModal?.data?.parts) {
           for (let upgrade of category.upgrades) {
             if (upgrades.includes(upgrade.id)) {
@@ -404,9 +404,9 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
   };
   const handleBuyNow = async (e, itemBuy) => {
     e.preventDefault();
-    const upgrades = selectedUpgrades.map((upgrade) => upgrade.id);
+    const upgrades = selectedUpgrades.map((upgrade) => upgrade?.id);
 
-    const clickedButtonID = e.currentTarget.id;
+    const clickedButtonID = e.currentTarget?.id;
     const resultModal = await getBikeConfiguratorData(itemBuy);
     setArrayDataModal(resultModal);
     setLoadingModal(false);
@@ -433,12 +433,12 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
       ) {
         // Extracting upgrade objects to save into local storage, so we can show its data in cart modal
         let equipmentPrice = 0;
-        let bikeFakeId = "" + arrayDataModal?.data?.variation.id;
+        let bikeFakeId = "" + arrayDataModal?.data?.variation?.id;
         for (let category of arrayDataModal?.data?.parts) {
           for (let upgrade of category.upgrades) {
-            if (upgrades.includes(upgrade.id)) {
+            if (upgrades.includes(upgrade?.id)) {
               equipmentPrice += totalPriceModal;
-              bikeFakeId += upgrade.id;
+              bikeFakeId += upgrade?.id;
             }
           }
         }
@@ -823,21 +823,21 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                     <legend className="block font-light text-gray-900 pt-6">Model</legend>
                     <div className="pt-6 space-y-3">
                       {bikeModels?.map((model, optionIdx) => (
-                        <div key={model.id} className="flex items-center font-light">
+                        <div key={model?.id} className="flex items-center font-light">
                           <input
-                            id={`${model.id}-${optionIdx}`}
-                            name={model.title}
-                            value={model.id}
-                            onChange={() => toggleQuery("model", model.id)}
+                            id={`${model?.id}-${optionIdx}`}
+                            name={model?.title}
+                            value={model?.id}
+                            onChange={() => toggleQuery("model", model?.id)}
                             type="checkbox"
-                            checked={hasQuery("model", model.id)}
+                            checked={hasQuery("model", model?.id)}
                             className="w-4 h-4 text-indigo-600 border-gray-300 rounded cursor-pointer focus:ring-indigo-500"
                           />
                           <label
-                            htmlFor={`${model.id}-${optionIdx}`}
+                            htmlFor={`${model?.id}-${optionIdx}`}
                             className="ml-3 text-sm font-light text-gray-600 cursor-pointer"
                           >
-                            {model.title}
+                            {model?.title}
                           </label>
                         </div>
                       ))}
@@ -894,21 +894,21 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                       <legend className="block font-light text-gray-900 pt-6">Motor</legend>
                       <div className="pt-6 space-y-3">
                         {motorsList?.map((motor, optionIdx) => (
-                          <div key={motor.id} className="flex items-center font-light">
+                          <div key={motor?.id} className="flex items-center font-light">
                             <input
-                              id={`${motor.id}-${optionIdx}`}
-                              name={motor.title}
-                              value={motor.id}
-                              onChange={() => toggleQuery("motor", motor.title)}
+                              id={`${motor?.id}-${optionIdx}`}
+                              name={motor?.title}
+                              value={motor?.id}
+                              onChange={() => toggleQuery("motor", motor?.title)}
                               type="checkbox"
-                              checked={hasQuery("motor", motor.title)}
+                              checked={hasQuery("motor", motor?.title)}
                               className="w-4 h-4 text-indigo-600 border-gray-300 rounded cursor-pointer focus:ring-indigo-500"
                             />
                             <label
-                              htmlFor={`${motor.id}-${optionIdx}`}
+                              htmlFor={`${motor?.id}-${optionIdx}`}
                               className="ml-3 text-sm font-light text-gray-600 cursor-pointer"
                             >
-                              {motor.title}
+                              {motor?.title}
                             </label>
                           </div>
                         ))}
@@ -922,21 +922,21 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                       <legend className="block pt-5 font-light text-gray-900 text-1remi">Battry</legend>
                       <div className="pt-6 space-y-3">
                         {batteriesList?.map((battery, optionIdx) => (
-                          <div key={battery.id} className="flex items-center font-light">
+                          <div key={battery?.id} className="flex items-center font-light">
                             <input
-                              id={`${battery.id}-${optionIdx}`}
-                              name={`${battery.id}[]`}
-                              value={battery.id}
-                              onChange={() => toggleQuery("battery", battery.title)}
-                              checked={hasQuery("battery", battery.title)}
+                              id={`${battery?.id}-${optionIdx}`}
+                              name={`${battery?.id}[]`}
+                              value={battery?.id}
+                              onChange={() => toggleQuery("battery", battery?.title)}
+                              checked={hasQuery("battery", battery?.title)}
                               type="checkbox"
                               className="w-4 h-4 text-indigo-600 border-gray-300 rounded cursor-pointer focus:ring-indigo-500"
                             />
                             <label
-                              htmlFor={`${battery.id}-${optionIdx}`}
+                              htmlFor={`${battery?.id}-${optionIdx}`}
                               className="ml-3 text-sm font-light text-gray-600 cursor-pointer"
                             >
-                              {battery.title}
+                              {battery?.title}
                             </label>
                           </div>
                         ))}
@@ -951,21 +951,21 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                       <legend className="block pt-5 font-light text-gray-900 text-1remi">Size</legend>
                       <div className="pt-6 space-y-3">
                         {frameSizesList?.map((size, optionIdx) => (
-                          <div key={size.id} className="flex items-center font-light">
+                          <div key={size?.id} className="flex items-center font-light">
                             <input
-                              id={`${size.id}-${optionIdx}`}
-                              name={`${size.id}[]`}
-                              value={size.id}
-                              onChange={() => toggleQuery("size", size.title)}
-                              checked={hasQuery("size", size.title)}
+                              id={`${size?.id}-${optionIdx}`}
+                              name={`${size?.id}[]`}
+                              value={size?.id}
+                              onChange={() => toggleQuery("size", size?.title)}
+                              checked={hasQuery("size", size?.title)}
                               type="checkbox"
                               className="w-4 h-4 text-indigo-600 border-gray-300 rounded cursor-pointer focus:ring-indigo-500"
                             />
                             <label
-                              htmlFor={`${size.id}-${optionIdx}`}
+                              htmlFor={`${size?.id}-${optionIdx}`}
                               className="ml-3 text-sm font-light text-gray-600 cursor-pointer"
                             >
-                              {size.title}
+                              {size?.title}
                             </label>
                           </div>
                         ))}
@@ -1055,7 +1055,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                   <h2 className="text-[1.75rem] text-left text-gray-900">{`> ${baseBikeTitle}`}</h2>
                   <div className="w-full my-5 flex flex-wrap justify-center">
                     {variationBikes?.map((item) => (
-                      <div className={classNames("w-full p-4 sm:w-3/6 md:w-full xl:w-3/6", styles.cart)} key={item.id}>
+                      <div className={classNames("w-full p-4 sm:w-3/6 md:w-full xl:w-3/6", styles.cart)} key={item?.id}>
                         <ConfiguratorCompareButton configuratorData={item} />
                         {item.label && (
                           <span className="pointer-events-none absolute top-3 left-3 z-10 rounded-full bg-sky-500 bg-opacity-90 py-0.5 px-1.5 text-[0.625rem] font-semibold uppercase leading-4 tracking-wide text-white">
@@ -1074,7 +1074,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                 <a>
                                   <Image
                                     src={item.variation_image}
-                                    alt={item.title}
+                                    alt={item?.title}
                                     width={900}
                                     height={490}
                                     layout="responsive"
@@ -1105,7 +1105,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                 {" "}
                                 <div className="mx-auto leading-8 ">
                                   <div className="text-center">
-                                    <p className="inline text-xl font-light ">{item.title}</p>
+                                    <p className="inline text-xl font-light ">{item?.title}</p>
                                     <p className="inline text-xl font-light text-gray-500">{` ${item.variation}`}</p>
                                   </div>
                                   <p className="text-center text-gray-500 font-extralight">
@@ -1274,7 +1274,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                   <div className="grid grid-cols-5 gap-2">
                                     {arrayDataModal?.data?.sizes.map((size) => (
                                       <RadioGroup.Option
-                                        key={size.id}
+                                        key={size?.id}
                                         value={size}
                                         // active={}
                                         className={`${
@@ -1313,7 +1313,7 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                         {colors.map((color) => (
                                           <>
                                             <RadioGroup.Option
-                                              key={color.id}
+                                              key={color?.id}
                                               value={color}
                                               // className={({
                                               //   active,
@@ -1336,13 +1336,13 @@ export default function ConfiguratorMain({ bikes, filters, isInventory }) {
                                               } relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none`}
                                             >
                                               <RadioGroup.Label as="span" className="sr-only">
-                                                {color.title}
+                                                {color?.title}
                                               </RadioGroup.Label>
                                               <Image
                                                 height={30}
                                                 width={30}
-                                                src={color.image_path}
-                                                alt={color.title}
+                                                src={color?.image_path}
+                                                alt={color?.title}
                                                 className="cursor-pointer object-contain rounded-full"
                                               />
                                             </RadioGroup.Option>

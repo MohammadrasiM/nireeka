@@ -25,8 +25,8 @@ const Channel = (props) => {
   // State to show newly fetched feed data
   const [posts, setPosts] = useState(props.posts);
   // Pagination Logic
-  const pageCount = Math.ceil(props.pagination.total / props.pagination.page_size);
-  const pagination = paginate(props.pagination.current, pageCount);
+  const pageCount = Math.ceil(props?.pagination?.total / props?.pagination?.page_size);
+  const pagination = paginate(props?.pagination?.current, pageCount);
   const paginationLinks = pagination.indexes.map((pageIndex) => {
     if (pageIndex === -1) return "#";
     return { pathname: `/forum/channels/${currentChannelSlug}/${pageIndex}` };
@@ -149,7 +149,7 @@ export const getStaticPaths = async () => {
     try {
       channelPosts = responses[i];
       pagination = channelPosts.data.pagination;
-      totalPageCount = Math.ceil(pagination.total / pagination.page_size);
+      totalPageCount = Math.ceil(pagination?.total / pagination?.page_size);
       for (let j = 1; j <= totalPageCount; j++) {
         paths.push({
           params: {

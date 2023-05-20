@@ -11,8 +11,8 @@ function Configurator({ bikes, filters }) {
         // title="configurator"
         title="configurator"
         name="Configurator | Build your own customized Nireeka ebike"
-        keywords={Object.keys(bikes)}
-        images={Object.values(bikes)?.map((bike) => bike?.[0]?.variation_image)}
+        keywords={bikes ? Object?.keys(bikes) : []}
+        images={bikes ? Object?.values(bikes)?.map((bike) => bike?.[0]?.variation_image) : []}
         available
         categoryUrl="configurator"
         description="Build your own customized Nireeka ebike"

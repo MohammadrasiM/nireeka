@@ -87,15 +87,15 @@ function* handleRemoveCartItemPending(action) {
 function* handleGetItemCountPending() {
   try {
     const { data: res } = yield call(getItemCountRequest);
-    debugger;
+    //debugger;
     if (res.data) {
-      debugger;
+      //debugger;
       yield put(getItemCountSuccess(res.data));
     }
   } catch (error) {
     const errorMessage = "Can't reach server right now.";
     yield put(getItemCountFail(error?.response?.data || { message: errorMessage }));
-    debugger;
+    //debugger;
   }
 }
 
